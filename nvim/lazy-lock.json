@@ -3,5 +3,6 @@
   "lazy.nvim": { "branch": "main", "commit": "85c7ff3711b730b4030d03144f6db6375044ae82" },
   "nvim-tree.lua": { "branch": "master", "commit": "321bc61580fd066b76861c32de3319c3a6d089e7" },
   "nvim-web-devicons": { "branch": "master", "commit": "8dcb311b0c92d460fac00eac706abd43d94d68af" },
-  "sonokai": { "branch": "master", "commit": "ec07018013b4683cf33f80ee4bdf3eca2621da33" }
+  "sonokai": { "branch": "master", "commit": "ec07018013b4683cf33f80ee4bdf3eca2621da33" },
+  "vimtex": { "branch": "master", "commit": "6e1229e23c3bbe93487ef62458b1241a2d8ff6af" }
 }

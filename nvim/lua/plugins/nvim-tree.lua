@@ -18,9 +18,9 @@ return {
         open_file = {
           quit_on_open = true,
             window_picker = {
-	        enable = false,
+	          enable = true,
+              chars = "123456789",
             },
-	    -- resize_window = false,
         },
       },
     }

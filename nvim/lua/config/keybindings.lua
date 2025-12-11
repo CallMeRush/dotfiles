@@ -1,5 +1,7 @@
 --- General
--- Print without carriage
+-- Change leader from "\" to " "
+vim.g.mapleader = " "
+-- Print without carriage "\r" or "^M"
 vim.keymap.set('n', 'p', function()
   local reg = vim.fn.getreg('+')
   if type(reg) == "string" then
@@ -23,9 +25,23 @@ vim.keymap.set('n', '<C-o>', ':NvimTreeFocus<CR>', { noremap = true, silent = tr
 -- Focus folder tree
 vim.keymap.set('n', '<C-p>', ':NvimTreeClose<CR>', { noremap = true, silent = true })
 
---- Switch between buffers
--- Next buffet
-vim.keymap.set('n', '<C-l>', ':bn<CR>', { noremap = true, silent = true })
--- Previous buffet
-vim.keymap.set('n', '<C-h>', ':bp<CR>', { noremap = true, silent = true })
+--- Handle windows and buffers
+-- Split window vertically and horizontally
+vim.keymap.set('n', '<leader>\\', ':vsplit<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>|', ':split<CR>', { noremap = true, silent = true })
+-- Switch between windows
+vim.keymap.set('n', '<C-h>', ':winc h<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-j>', ':winc j<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-k>', ':winc k<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-l>', ':winc l<CR>', { noremap = true, silent = true })
+-- Switch to indexed buffer
+vim.keymap.set('n', '<leader>1', ':BufferLinePick<CR>1', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>2', ':BufferLinePick<CR>2', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>3', ':BufferLinePick<CR>3', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>4', ':BufferLinePick<CR>4', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>5', ':BufferLinePick<CR>5', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>6', ':BufferLinePick<CR>6', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>7', ':BufferLinePick<CR>7', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>8', ':BufferLinePick<CR>8', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>9', ':BufferLinePick<CR>9', { noremap = true, silent = true })
 

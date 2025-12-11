@@ -4,5 +4,6 @@
   "nvim-tree.lua": { "branch": "master", "commit": "321bc61580fd066b76861c32de3319c3a6d089e7" },
   "nvim-web-devicons": { "branch": "master", "commit": "8dcb311b0c92d460fac00eac706abd43d94d68af" },
   "sonokai": { "branch": "master", "commit": "ec07018013b4683cf33f80ee4bdf3eca2621da33" },
+  "vim-gitgutter": { "branch": "main", "commit": "0acb772e76064cc406664ab595b58b3fac76488a" },
   "vimtex": { "branch": "master", "commit": "6e1229e23c3bbe93487ef62458b1241a2d8ff6af" }
 }

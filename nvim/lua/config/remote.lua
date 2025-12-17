@@ -39,7 +39,7 @@ function CopyDirToRemote()
         vim.notify("❌ Failed to start rsync job", vim.log.levels.ERROR)
     else
         vim.notify("🔄 Syncing directory to " .. remote_path, vim.log.levels.INFO)
-        local success, err = pcall(vim.cmd, 'silent !tmux set-option -g status-right "🔄 Syncing directory | ' .. tmux_status .. '"')
+        local success, err = pcall(vim.cmd, 'silent !tmux set-option -g status-right "🔄  Syncing directory | ' .. tmux_status .. '"')
     end
 end
 
@@ -81,7 +81,7 @@ function CopyFileToRemote()
         vim.notify("❌  Failed to start rsync job", vim.log.levels.ERROR)
     else
         vim.notify("🔄  Syncing file to " .. remote_path, vim.log.levels.INFO)
-        local success, err = pcall(vim.cmd, 'silent !tmux set-option -g status-right "🔄 Syncing file | ' .. tmux_status .. '"')
+        local success, err = pcall(vim.cmd, 'silent !tmux set-option -g status-right "🔄  Syncing file | ' .. tmux_status .. '"')
     end
 end
 

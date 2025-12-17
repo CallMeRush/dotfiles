@@ -1,3 +1,5 @@
+local tmux_status = "🕖  \\%H:\\%M:\\%S | 📅  (\\%a) \\%d.\\%m.\\%y "
+
 function CopyDirToRemote()
     local local_dir = vim.fn.getcwd()
     local local_without_home = string.sub(local_dir, #os.getenv("HOME") + 2)
@@ -24,6 +26,7 @@ function CopyDirToRemote()
         on_exit = function(_, exit_code, _)
             if exit_code == 0 then
                 vim.notify("✅ Directory synced successfully to " .. remote_host, vim.log.levels.INFO)
+                local success, err = pcall(vim.cmd, 'silent !tmux set-option -g status-right "✅  Directory synced | ' .. tmux_status .. '"')
             else
                 vim.notify("❌ rsync failed (exit code: " .. exit_code .. ")", vim.log.levels.ERROR)
             end
@@ -36,6 +39,7 @@ function CopyDirToRemote()
         vim.notify("❌ Failed to start rsync job", vim.log.levels.ERROR)
     else
         vim.notify("🔄 Syncing directory to " .. remote_path, vim.log.levels.INFO)
+        local success, err = pcall(vim.cmd, 'silent !tmux set-option -g status-right "🔄 Syncing directory | ' .. tmux_status .. '"')
     end
 end
 
@@ -63,9 +67,10 @@ function CopyFileToRemote()
     local job = vim.fn.jobstart(cmd, {
         on_exit = function(_, exit_code, _)
             if exit_code == 0 then
-                vim.notify("✅ File synced successfully to " .. remote_host, vim.log.levels.INFO)
+                vim.notify("✅  File synced successfully to " .. remote_host, vim.log.levels.INFO)
+                local success, err = pcall(vim.cmd, 'silent !tmux set-option -g status-right "✅  File synced | ' .. tmux_status .. '"')
             else
-                vim.notify("❌ rsync failed (exit code: " .. exit_code .. ")", vim.log.levels.ERROR)
+                vim.notify("❌  rsync failed (exit code: " .. exit_code .. ")", vim.log.levels.ERROR)
             end
         end,
         stdout_buffered = true,
@@ -73,9 +78,10 @@ function CopyFileToRemote()
     })
     
     if job <= 0 then
-        vim.notify("❌ Failed to start rsync job", vim.log.levels.ERROR)
+        vim.notify("❌  Failed to start rsync job", vim.log.levels.ERROR)
     else
-        vim.notify("🔄 Syncing file to " .. remote_path, vim.log.levels.INFO)
+        vim.notify("🔄  Syncing file to " .. remote_path, vim.log.levels.INFO)
+        local success, err = pcall(vim.cmd, 'silent !tmux set-option -g status-right "🔄 Syncing file | ' .. tmux_status .. '"')
     end
 end
 

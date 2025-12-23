@@ -4,6 +4,7 @@
 vim.opt.clipboard = "unnamedplus"
 
 -- Show numbers
+vim.opt.number = true
 vim.opt.relativenumber = true
 
 -- Edit tab key

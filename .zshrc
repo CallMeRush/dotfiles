@@ -168,6 +168,18 @@ unset_proxy() {
   __clear_apt_proxy
 }
 
+OPENVPN_CONFIG="$HOME/huaweirc-tcp-socks-Leonardo.ovpn"
+bz_connect() {
+    sudo openvpn --config $OPENVPN_CONFIG --daemon 
+    sleep 0.1
+    systemd-tty-ask-password-agent
+    sleep 0.1
+    systemd-tty-ask-password-agent
+}
+bz_disconnect() {
+    pkill -SIGTERM -f 'openvpn --config'
+}
+
 set_proxy
 
 # PATH changes

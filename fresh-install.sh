@@ -11,6 +11,6 @@ ln -s dotfiles/.zshrc .zshrc
 
 # Symlink for .config
 mkdir -p .config
-ln -s dotfiles/nvim .config/nvim
-ln -s dotfiles/tmux .config/tmux
+ln -s ~/dotfiles/nvim ~/.config/nvim
+ln -s ~/dotfiles/tmux ~/.config/tmux
 

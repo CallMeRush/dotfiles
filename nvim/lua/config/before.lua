@@ -19,8 +19,6 @@ vim.keymap.set("i", "<LeftMouse>", "<NOP>", { noremap = true, silent = true })
 
 -- Enable ANSI colorization
 function ansi_colorize()
-  vim.wo.number = false
-  vim.wo.relativenumber = false
   vim.wo.statuscolumn = ""
   vim.wo.signcolumn = "no"
   vim.opt.listchars = { space = " " }
@@ -37,6 +35,9 @@ function ansi_colorize()
   vim.keymap.set("n", "q", "<cmd>qa!<cr>", { silent = true, buffer = buf })
   vim.api.nvim_create_autocmd("TextChanged", { buffer = buf, command = "normal! G$" })
   vim.api.nvim_create_autocmd("TermEnter", { buffer = buf, command = "stopinsert" })
+
+  vim.wo.number = true
+  vim.wo.relativenumber = true
 end
 vim.api.nvim_create_user_command('ANSI', function(opts) 
     local success, err = pcall(vim.cmd, "silent! wa")

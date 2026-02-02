@@ -25,6 +25,12 @@ vim.keymap.set('n', '<C-o>', ':NvimTreeFocus<CR>', { noremap = true, silent = tr
 -- Focus folder tree
 vim.keymap.set('n', '<C-p>', ':NvimTreeClose<CR>', { noremap = true, silent = true })
 
+--- outline
+-- Focus folder tree
+vim.keymap.set('n', '<leader>o', ':Outline<CR>', { noremap = true, silent = true })
+-- Focus folder tree
+vim.keymap.set('n', '<leader>p', ':OutlineClose<CR>', { noremap = true, silent = true })
+
 --- Handle windows and buffers
 -- Split window vertically and horizontally
 vim.keymap.set('n', '<leader>\\', ':vsplit<CR>', { noremap = true, silent = true })
@@ -51,4 +57,8 @@ vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find f
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
 -- vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
+
+--- nvim-origami
+vim.keymap.set("n", "H", function() vim.cmd("normal! 0") require("origami").h() end)
+vim.keymap.set("n", "L", function() require("origami").l() end)
 

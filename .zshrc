@@ -189,6 +189,9 @@ export PATH=$HOME/installed/node-v24.12.0-linux-x64/bin:$PATH
 # tmux changes
 if [[ $TMUX ]]; then
     tmux set-option -g status-interval 1
+    export TMUX_BASE="colour13"
+    export TMUX_BZ="blue"
+    export TMUX_GZ="green"
 fi
 
 # ssh shortcuts

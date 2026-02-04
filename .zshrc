@@ -187,5 +187,10 @@ export PATH=$HOME/installed/nvim-linux-x86_64/bin:$PATH
 export PATH=$HOME/installed/node-v24.12.0-linux-x64/bin:$PATH
 
 # tmux changes
-tmux set-option -g status-interval 1
+if [[ $TMUX ]]; then
+    tmux set-option -g status-interval 1
+fi
+
+# ssh shortcuts
+export PATH=$HOME/dotfiles/ssh-binaries/bin:$PATH
 

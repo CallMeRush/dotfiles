@@ -48,7 +48,7 @@ function ansi_colorize()
     desc = "Quit ANSI viewer"
   })
 
-  -- CRITICAL: Position cursor at TOP after terminal fully initializes
+  -- Position cursor at TOP after terminal fully initializes
   vim.api.nvim_create_autocmd("TermOpen", {
     buffer = buf,
     group = group,

@@ -14,3 +14,8 @@ mkdir -p .config
 ln -s ~/dotfiles/nvim ~/.config/nvim
 ln -s ~/dotfiles/tmux ~/.config/tmux
 
+# Install cargo
+curl https://sh.rustup.rs -sSf | sh
+# Install treesitter
+cargo install --locked tree-sitter-cli
+

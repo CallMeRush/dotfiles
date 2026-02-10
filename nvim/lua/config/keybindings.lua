@@ -22,14 +22,14 @@ end, { silent = true, desc = "Paste before without ^M" })
 --- nvim-tree
 -- Focus folder tree
 vim.keymap.set('n', '<C-o>', ':NvimTreeFocus<CR>', { noremap = true, silent = true })
--- Focus folder tree
+-- Close folder tree
 vim.keymap.set('n', '<C-p>', ':NvimTreeClose<CR>', { noremap = true, silent = true })
 
---- outline
--- Focus folder tree
-vim.keymap.set('n', '<leader>o', ':Outline<CR>', { noremap = true, silent = true })
--- Focus folder tree
-vim.keymap.set('n', '<leader>p', ':OutlineClose<CR>', { noremap = true, silent = true })
+--- aerial
+-- Focus outline tree
+vim.keymap.set('n', '<leader>o', ':AerialOpen<CR>', { noremap = true, silent = true })
+-- Close outline tree
+vim.keymap.set('n', '<leader>p', ':AerialClose<CR>', { noremap = true, silent = true })
 
 --- Handle windows and buffers
 -- Split window vertically and horizontally

@@ -1,7 +1,8 @@
 --- General config
 
 -- Use system-wide clipboard
-vim.opt.clipboard = "unnamedplus"
+-- vim.opt.clipboard = "unnamedplus"
+vim.g.clipboard = "osc52"
 
 -- Show numbers
 vim.opt.number = true

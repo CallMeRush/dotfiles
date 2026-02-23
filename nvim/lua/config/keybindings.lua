@@ -58,6 +58,9 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live gr
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
 -- vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 
+--- diffview
+vim.keymap.set('n', '<leader>gd', ':DiffviewOpen<cr>', { desc = 'Open diffview' })
+
 --- nvim-origami
 vim.keymap.set("n", "H", function() vim.cmd("normal! 0") require("origami").h() end)
 vim.keymap.set("n", "L", function() require("origami").l() end)
